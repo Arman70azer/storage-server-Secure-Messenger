@@ -38,6 +38,7 @@ func ReceiveImage(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method != http.MethodPost {
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		fmt.Println("Method not allowed")
 		return
 	}
 
@@ -45,6 +46,7 @@ func ReceiveImage(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseMultipartForm(10 << 20)
 	if err != nil {
 		http.Error(w, "Unable to parse form", http.StatusBadRequest)
+		fmt.Println("Unable to parse form")
 		return
 	}
 

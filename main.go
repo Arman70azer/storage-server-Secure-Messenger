@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println("hhhh")
+
 	fmt.Println("Server is running at http://localhost:8080")
 
 	http.HandleFunc("/images/", handlers.ServeImage)
