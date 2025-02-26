@@ -52,12 +52,14 @@ func ReceiveImage(w http.ResponseWriter, r *http.Request) {
 	err = stockeImage(r)
 	if err != nil {
 		response := UploadResponse{Message: "Failed to upload image", Error: err.Error()}
+		fmt.Println(response)
 		jsonResponse(w, response, http.StatusInternalServerError)
 		return
 	}
 
 	// Réponse réussie
 	response := UploadResponse{Message: "Image uploaded successfully"}
+	fmt.Println(response)
 	jsonResponse(w, response, http.StatusOK)
 }
 

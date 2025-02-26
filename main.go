@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fmt.Println("hhhh")
-	fmt.Println("Server is running at http://localhost:8000")
+	fmt.Println("Server is running at http://localhost:8080")
 
 	http.HandleFunc("/images/", handlers.ServeImage)
 	http.HandleFunc("/imagesToSave/", handlers.ReceiveImage)
@@ -19,7 +19,7 @@ func main() {
 	http.HandleFunc("/audios/", handlers.ServeImage)
 	http.HandleFunc("/audiosToSave/", handlers.ReceiveImage)
 
-	err := http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		fmt.Println("Error starting the server:", err)
 	}
